@@ -1,0 +1,26 @@
+# ---- Install PyTorch separately for your CUDA (example: CUDA 12.1) ----
+pip install --index-url https://download.pytorch.org/whl/cu121 torch torchvision torchaudio
+# (CPU 版可直接: pip install torch torchvision torchaudio)
+
+# ---- Core utils ----
+numpy>=1.23
+PyYAML>=6.0.1
+tqdm>=4.66.0
+
+# ---- Tokenization & metrics ----
+sentencepiece>=0.1.99
+sacrebleu>=2.4.0
+evaluate>=0.4.2
+
+# ---- Plotting ----
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# ---- Hugging Face stack ----
+transformers>=4.44.0
+datasets>=2.19.0
+accelerate>=0.33.0
+huggingface-hub>=0.24.0
+tokenizers>=0.15.2
+pyarrow>=14.0.2
