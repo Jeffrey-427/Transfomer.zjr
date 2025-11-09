@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 3. 数据与预处理(原始数据以及处理后的数据在data文件夹中)
 
-数据集：IWSLT2017 EN↔DE（已在本机准备）
+数据集：IWSLT2017 EN↔DE（已在本机准备）下载原网址：https://huggingface.co/datasets/IWSLT/iwslt2017
 
 分词：SentencePiece（Unigram），联合词表，vocab_size=16000，包含自定义语言标签 <2en>、<2de>
 
