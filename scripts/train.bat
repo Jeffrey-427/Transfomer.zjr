@@ -45,8 +45,8 @@ REM *(如果你是 GPU，请替换上面这行 torch 为 CUDA 对应版本)*
 REM ---- Write configs ----
 >configs\base.yaml (
   echo data:
-  echo   spm_model: tokenizer/spm.model
-  echo   train_bi: data/train_bi.jsonl
+  echo   spm_model: data/processed/spm.model
+  echo   train_bi: data/processed/train_bi.jsonl
   echo   dev_en_de: data/dev_en_de.jsonl
   echo   dev_de_en: data/dev_de_en.jsonl
   echo.
@@ -102,10 +102,10 @@ REM ---- Write minimal dataset + tokenizer builder ----
 )
 
 echo [Info] 生成数据与分词器...
-conda run -n %ENV_NAME% python scripts\prepare_data.py
+conda run -n %ENV_NAME% python src\prepare_iwslt_local.py
 
 echo [Info] 开始训练...
-conda run -n %ENV_NAME% python train.py --config configs\base.yaml
+conda run -n %ENV_NAME% python train.py --config configs\base\config.yaml
 
 echo.
 echo ✅ 完成：结果已保存到 results\run1
